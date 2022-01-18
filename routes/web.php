@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\TemplateController;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\TemplateController@index' );
 
+Route::get('/', 'App\Http\Controllers\TemplateController@index');
 Route::get('register', 'App\Http\Controllers\TemplateController@register');
+Route::get('menu', 'App\Http\Controllers\MenuController@list');
+Route::get('login', 'App\Http\Controllers\TemplateController@login');
+Route::post('/store',"App\Http\Controllers\UserController@store");
+Route::post('/check',"App\Http\Controllers\UserController@check");
+
+
+

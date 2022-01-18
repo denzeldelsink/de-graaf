@@ -1,3 +1,7 @@
+<?
+use Illuminate\Support\Facades\DB;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +41,9 @@
 
 <body>
 
-  
- 
+    
+  </header><!-- End Header -->
+
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
@@ -47,45 +52,33 @@
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
         <div class="carousel-inner" role="listbox">
+
           <!-- Slide 1 -->
           <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
                 
-                <form action="{{URL::to('/store')}}" method="post" style="margin-bottom:10% ;">
-                @csrf
-                  <table>
-                  <tr>
-                    <td><label for="voornaam"><h2><span>Voornaam</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Firstname" name="voornaam" required></td>
-                    <br>
-</tr> 
-<tr>
-                    <td><label for="achternaam"><h2><span>Achternaam</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Lastname" name="achternaam" required></td>
-                    <br>
-</tr> 
-<tr>
-                    <td><label for="email"><h2><span>Email</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Email" name="email" required></td>
-                    <br>
-</tr> 
-                    <tr>
-                    <td><label for="wachtwoord"><h2><span>Wachtwoord</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Password" name="wachtwoord" required></td>
-                    <br>
-</tr> 
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Reserveer een tafel</a>
+                  <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<tr>
- <td> <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Al een account</a></td>
-<td><button class="btn-book animate__animated animate__fadeInUp scrollto" type="submit">Aanmaken</button></td>
-</tr>
+       
 
-                    </table>
-                </form>
-              
+        </div>
 
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
 
       </div>
     </div>
@@ -95,28 +88,46 @@
 
 
 
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu">
+      <div class="container">
 
-   
+        <div class="section-title">
+          <h2> <span>MenuKaart</span></h2>
+        </div>
+     
+        @foreach($data as $i)
+        <div class="row menu-container">
+                 <div class="col-lg-6 menu-item filter-starters">
+            <div class="menu-content">
+              <a href="#">{{$i->Naam}}</a><span>€{{$i->Prijs}}</span>
+            </div>
+            
+          </div>
 
+       
 
+        </div>
+        @endforeach
+      </div>
+    </section><!-- End Menu Section -->
 
-   
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Restaurant De Graaf</h3>
-     
-      <div class="copyright">
-      </div>
+      <h3>De graaf</h3>
+
+      
+    
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/ -->
-          </div>
+      </div>
     </div>
   </footer><!-- End Footer -->
 

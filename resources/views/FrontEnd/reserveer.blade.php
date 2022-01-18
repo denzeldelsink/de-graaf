@@ -1,3 +1,7 @@
+<?
+use Illuminate\Support\Facades\DB;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,69 +41,66 @@
 
 <body>
 
-  
+    
+  </header><!-- End Header -->
+
  
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  
 
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide 1 -->
-          <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg);">
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
-                
-                <form action="{{URL::to('/store')}}" method="post" style="margin-bottom:10% ;">
-                @csrf
-                  <table>
-                  <tr>
-                    <td><label for="voornaam"><h2><span>Voornaam</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Firstname" name="voornaam" required></td>
-                    <br>
-</tr> 
-<tr>
-                    <td><label for="achternaam"><h2><span>Achternaam</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Lastname" name="achternaam" required></td>
-                    <br>
-</tr> 
-<tr>
-                    <td><label for="email"><h2><span>Email</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Email" name="email" required></td>
-                    <br>
-</tr> 
-                    <tr>
-                    <td><label for="wachtwoord"><h2><span>Wachtwoord</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Password" name="wachtwoord" required></td>
-                    <br>
-</tr> 
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container">
 
-<tr>
- <td> <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Al een account</a></td>
-<td><button class="btn-book animate__animated animate__fadeInUp scrollto" type="submit">Aanmaken</button></td>
-</tr>
+        <div class="section-title">
+          <h2>Reserveer een <span>Tafel</span></h2>
+             </div>
 
-                    </table>
-                </form>
-              
-
+        <form action="{URL::to('/storer')}}" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+          
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
 
       </div>
-    </div>
-  </section><!-- End Hero -->
+    </section><!-- End Book A Table Section -->
 
-  <main id="main">
-
-
-
+   
+    
 
    
 
-
-
+   
    
 
   </main><!-- End #main -->
@@ -107,16 +108,16 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Restaurant De Graaf</h3>
-     
-      <div class="copyright">
-      </div>
+      <h3>De graaf</h3>
+
+      
+    
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/ -->
-          </div>
+      </div>
     </div>
   </footer><!-- End Footer -->
 

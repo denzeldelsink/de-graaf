@@ -53,33 +53,29 @@
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
                 
-                <form action="{{URL::to('/store')}}" method="post" style="margin-bottom:10% ;">
-                @csrf
+                <form action="{{URL::to('/check')}}" method="post" style="margin-bottom:10% ;">
+              @csrf
                   <table>
                   <tr>
-                    <td><label for="voornaam"><h2><span>Voornaam</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Firstname" name="voornaam" required></td>
-                    <br>
-</tr> 
-<tr>
-                    <td><label for="achternaam"><h2><span>Achternaam</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Lastname" name="achternaam" required></td>
-                    <br>
-</tr> 
-<tr>
+
                     <td><label for="email"><h2><span>Email</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Email" name="email" required></td>
+                    <td></td>
+                    <td><input type="text" placeholder="Enter Username" name="email" required></td>
                     <br>
 </tr> 
                     <tr>
                     <td><label for="wachtwoord"><h2><span>Wachtwoord</span></h2> </label></td>
-                    <td><input type="text" placeholder="Enter Password" name="wachtwoord" required></td>
+                    <td></td>
+                    <td><input type="text" placeholder="Enter Username" name="wachtwoord" required></td>
                     <br>
 </tr> 
 
 <tr>
- <td> <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Al een account</a></td>
-<td><button class="btn-book animate__animated animate__fadeInUp scrollto" type="submit">Aanmaken</button></td>
+<td  class="btn-book animate__animated animate__fadeInUp scrollto"><a href="/de-graaf/public/register">Aanmelden</a></td>
+<td></td>
+
+<td><button  class="btn-book animate__animated animate__fadeInUp scrollto" type="submit">Login</button></td>
+<td></td>
 </tr>
 
                     </table>
