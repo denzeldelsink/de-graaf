@@ -10,11 +10,11 @@ class ReserveerController extends Controller
     public function store(Request $request)
     {
         print_r($request->input());
-        $voornaam = $request->input('voornaam');
-        $achternaam = $request->input('achternaam');
-        $email = $request->input('email');
-        $wachtwoord = $request->input('wachtwoord');
-        $result=DB::insert("insert into gebruiker(Voornaam,Achternaam,Email,Wachtwoord,Beheerder) values($voornaam,$achternaam,$email,$wachtwoord,0)");
+        $naam = $request->input('name');
+        $time = $request->input('time');
+        $date = $request->input('date');
+        $aantal = $request->input('people');
+        $result=DB::insert("insert into reservering(Klantnaam,Tijd,Datum,Aantal) values('$naam','$time','$date','$aantal')");
         return redirect()->guest('/');
     }
 }

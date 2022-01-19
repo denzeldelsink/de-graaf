@@ -337,6 +337,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(39, 37, 34, 0.8);
   overflow: hidden;
   padding: 0;
+  background-image: url('../../resources/views/FrontEnd/img/chefs-bg.jpg');
+  
 }
 #hero .carousel-item {
   width: 100%;

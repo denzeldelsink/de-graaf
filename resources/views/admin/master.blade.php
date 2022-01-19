@@ -40,7 +40,12 @@ use Illuminate\Support\Facades\DB;
 </head>
 
 <body>
-<section id="hero">
+
+    
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
     <div class="hero-container">
       <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -52,12 +57,12 @@ use Illuminate\Support\Facades\DB;
           <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
+                <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf Beheerder</span> </h2>
                 
                 <div>
-                <a href="/de-graaf/public" class="btn-menu animate__animated animate__fadeInUp scrollto">Home</a>
-                  <a href="/de-graaf/public/menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
-                  <a href="/de-graaf/public/reserveer" class="btn-book animate__animated animate__fadeInUp scrollto">Reserveer een tafel</a>
+                <a href="/de-graaf/public/admin" class="btn-menu animate__animated animate__fadeInUp scrollto">Home</a>
+                <a href="/de-graaf/public/admin/menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
+                  <a href="/de-graaf/public/gebruiker" class="btn-book animate__animated animate__fadeInUp scrollto">Gebruikers</a>
                   <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Login</a>
                 </div>
               </div>
@@ -79,51 +84,15 @@ use Illuminate\Support\Facades\DB;
       </div>
     </div>
   </section><!-- End Hero -->
-    
-  </header><!-- End Header -->
 
- 
-  
+  <main id="main">
 
 
-    <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Reserveer een <span>Tafel</span></h2>
-             </div>
-
-        <form action="{{URL::to('/storer')}}" method="post" role="form" class="php-email-form">
-        @csrf
-          <div class="row">
-       
-          <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="text" class="form-control" name="name" id="time" placeholder="Naam" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="date" name="date" class="form-control" id="date" placeholder="Datum" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="time" class="form-control" name="time" id="time" placeholder="Time" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="number" class="form-control" name="people" id="people" placeholder="Aantal mensen" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
-              <div class="validate"></div>
-            </div>
-          </div>
-        
-         
-          <div class="text-center"><button type="submit">Reserveer</button></div>
-        </form>
-
-      </div>
-    </section><!-- End Book A Table Section -->
 
    
+
+
+    
     
 
    
@@ -136,7 +105,7 @@ use Illuminate\Support\Facades\DB;
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>De graaf</h3>
+      <h3>De graaf Beheerder</h3>
 
       
     

@@ -40,7 +40,12 @@ use Illuminate\Support\Facades\DB;
 </head>
 
 <body>
-<section id="hero">
+
+    
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
     <div class="hero-container">
       <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -52,12 +57,12 @@ use Illuminate\Support\Facades\DB;
           <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
+                <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf Beheerder</span> </h2>
                 
                 <div>
-                <a href="/de-graaf/public" class="btn-menu animate__animated animate__fadeInUp scrollto">Home</a>
-                  <a href="/de-graaf/public/menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
-                  <a href="/de-graaf/public/reserveer" class="btn-book animate__animated animate__fadeInUp scrollto">Reserveer een tafel</a>
+                <a href="/de-graaf/public/admin" class="btn-menu animate__animated animate__fadeInUp scrollto">Home</a>
+                <a href="/de-graaf/public/admin/menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
+                  <a href="/de-graaf/public/gebruiker" class="btn-book animate__animated animate__fadeInUp scrollto">Gebruikers</a>
                   <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Login</a>
                 </div>
               </div>
@@ -79,57 +84,57 @@ use Illuminate\Support\Facades\DB;
       </div>
     </div>
   </section><!-- End Hero -->
-    
-  </header><!-- End Header -->
 
- 
-  
+  <main id="main">
 
 
-    <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table">
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu">
       <div class="container">
 
         <div class="section-title">
-          <h2>Reserveer een <span>Tafel</span></h2>
-             </div>
-
-        <form action="{{URL::to('/storer')}}" method="post" role="form" class="php-email-form">
-        @csrf
-          <div class="row">
-       
-          <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="text" class="form-control" name="name" id="time" placeholder="Naam" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="date" name="date" class="form-control" id="date" placeholder="Datum" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="time" class="form-control" name="time" id="time" placeholder="Time" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="number" class="form-control" name="people" id="people" placeholder="Aantal mensen" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
-              <div class="validate"></div>
-            </div>
-          </div>
-        
-         
-          <div class="text-center"><button type="submit">Reserveer</button></div>
-        </form>
-
-      </div>
-    </section><!-- End Book A Table Section -->
-
-   
+          <h2> <span>MenuKaart</span></h2>
+        </div>
+        <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<tr>
+            <td>Naam</td>
+            <td>Prijs</td>
+            <td>Type</td>
+            <td></td>
+        </tr>
+        @foreach($data as $i)
+      
+        <div class="row menu-container">
+                 <div class="col-lg-6 menu-item filter-starters">
+            <div class="menu-content">
+              <td><a href="#">{{$i->Naam}}</a></td>
+              <td><a href="#">{{$i->Prijs}}</a></td>
+              <td><span>{{$i->Type}}</span></td>
+             <td> <a href="/de-graaf/public/admin/menu/delete/<?php echo $i->Id;?>">delete</a></td>
     
+            
+          </div>
 
-   
+       
 
+        </div>
+        </tr>
+        @endforeach
    
-   
+      </table>
+      <a href="/de-graaf/public/admin/menu/add">Toevoegen</a>
+      </div>
+    </section><!-- End Menu Section -->
+
 
   </main><!-- End #main -->
 

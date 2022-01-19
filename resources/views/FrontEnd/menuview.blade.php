@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Delicious Bootstrap Template - Index</title>
+  <title>De graaf</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -60,8 +60,9 @@ use Illuminate\Support\Facades\DB;
                 <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
                 
                 <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Reserveer een tafel</a>
+                <a href="/de-graaf/public" class="btn-menu animate__animated animate__fadeInUp scrollto">Home</a>
+                <a href="/de-graaf/public/menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
+                  <a href="/de-graaf/public/reserveer" class="btn-book animate__animated animate__fadeInUp scrollto">Reserveer een tafel</a>
                   <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Login</a>
                 </div>
               </div>

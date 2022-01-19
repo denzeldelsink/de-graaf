@@ -40,45 +40,7 @@ use Illuminate\Support\Facades\DB;
 </head>
 
 <body>
-<section id="hero">
-    <div class="hero-container">
-      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-        <div class="carousel-inner" role="listbox">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg);">
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown" style="margin-top :100px;;">Restaurant <span>De graaf</span> </h2>
-                
-                <div>
-                <a href="/de-graaf/public" class="btn-menu animate__animated animate__fadeInUp scrollto">Home</a>
-                  <a href="/de-graaf/public/menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Menu</a>
-                  <a href="/de-graaf/public/reserveer" class="btn-book animate__animated animate__fadeInUp scrollto">Reserveer een tafel</a>
-                  <a href="/de-graaf/public/login" class="btn-book animate__animated animate__fadeInUp scrollto">Login</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-       
-
-        </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-      </div>
-    </div>
-  </section><!-- End Hero -->
     
   </header><!-- End Header -->
 
@@ -91,33 +53,29 @@ use Illuminate\Support\Facades\DB;
       <div class="container">
 
         <div class="section-title">
-          <h2>Reserveer een <span>Tafel</span></h2>
+          <h2>Menu item  <span>Aanmaken</span></h2>
              </div>
 
-        <form action="{{URL::to('/storer')}}" method="post" role="form" class="php-email-form">
+        <form action="{{URL::to('admin/menu/store')}}" method="post" role="form" class="php-email-form">
         @csrf
           <div class="row">
        
           <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="text" class="form-control" name="name" id="time" placeholder="Naam" >
+              <input type="text" class="form-control" name="naam" id="time" placeholder="Naam" >
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="date" name="date" class="form-control" id="date" placeholder="Datum" >
+              <input type="text" name="prijs" class="form-control" id="date" placeholder="Prijs" >
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="time" class="form-control" name="time" id="time" placeholder="Time" >
-              <div class="validate"></div>
-            </div>
-            <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="number" class="form-control" name="people" id="people" placeholder="Aantal mensen" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <input type="text" class="form-control" name="type" id="time" placeholder="Type" >
               <div class="validate"></div>
             </div>
           </div>
         
          
-          <div class="text-center"><button type="submit">Reserveer</button></div>
+          <div class="text-center"><button type="submit">Aanmaken</button></div>
         </form>
 
       </div>
